@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<title>RO-Player Fallback</title>
+	<style>
+		* {
+			-webkit-user-drag   : none;
+			-webkit-user-select : none;
+			box-sizing          : border-box;
+		}
+
+
+		html, body, webview {
+			height      : 100%;
+			width       : 100%;
+			margin      : 0;
+			padding     : 0;
+			overflow    : hidden;
+			font-family : Verdana, sans-serif;
+			color       : #fff;
+		}
+
+		img {
+			display   : block;
+			position  : absolute;
+			top       : 50%;
+			left      : 50%;
+			transform : translate(-50%, -50%);
+		}
+
+
+		#videoBG {
+			position : fixed;
+			z-index  : -1;
+			width    : 100%;
+			height   : auto;
+			top      : 0;
+			left     : 0;
+		}
+
+		@media (min-aspect-ratio : 16/9) {
+			#videoBG {
+				width  : 100%;
+				height : auto;
+			}
+		}
+
+		@media (max-aspect-ratio : 16/9) {
+			#videoBG {
+				width  : auto;
+				height : 100%;
+			}
+
+		}
+	</style>
+
+</head>
+<body>
+
+<img style="width:70vw;" src="assets/logo.svg" alt>
+
+<video id="videoBG" autoplay muted loop>
+	<source src="assets/ro.mp4" type="video/mp4">
+</video>
+
+</body>
+</html>
